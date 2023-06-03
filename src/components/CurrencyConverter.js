@@ -7,10 +7,9 @@ const CurrencyConverter = () => {
     const currencies = ['BTC', 'ETC', 'USD', 'XRP', 'LTC', 'ADA'];
     const [chosenPrimaryCurrency, setChosenPrimaryCurrency] = useState('BTC');
     const [chosenSecondaryCurrency, setChosenSecondaryCurrency] = useState('BTC');
-
     const [amount, setAmount] = useState(1);
-
     const [exchangeRate, setExchangeRate] = useState(0);
+    const [result, setResult] = useState(0)
 
     console.log(amount);
 
@@ -33,9 +32,11 @@ const CurrencyConverter = () => {
         axios.request(options).then((response) => {
             console.log(response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
             setExchangeRate(response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
+            setResult(response.data['Realtime Currency Exchange Rate']['5. Exchange Rate'] * amount)
 
         }).catch((error) => { console.error(error) })
     }
+    console.log(exchangeRate)
 
     return (
         <div className="currency-converter">
@@ -66,7 +67,8 @@ const CurrencyConverter = () => {
                             <td><input
                                 type="number"
                                 name="currency-2"
-                                value={""}
+                                value={result}
+                                disabled={true}
                             /></td>
                             <td>
                                 <select value={chosenSecondaryCurrency}
@@ -82,7 +84,11 @@ const CurrencyConverter = () => {
                 </table>
                 <button className="convert-button" onClick={convert}>Convert</button>
             </div>
-            <ExchangeRate />
+            <ExchangeRate 
+                exchangeRate={exchangeRate}
+                chosenPrimaryCurrency={chosenPrimaryCurrency}
+                chosenSecondaryCurrency={chosenSecondaryCurrency}
+            />
         </div>
     );
 }
