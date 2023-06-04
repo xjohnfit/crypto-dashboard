@@ -14,9 +14,10 @@ code {
 
 .app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  padding: 10px;
   align-items: center;
-  height: 50vh;
 }
 
 .news-feed {
@@ -25,7 +26,7 @@ code {
   margin: 5px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   height: 100%;
-  max-width: 500px;
+  width: 500px;
 }
 
 .newstext {
@@ -50,7 +51,7 @@ a:hover {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   text-align: center;
   height: 100%;
-  max-width: 500px;
+  width: 500px;
 }
 
 .exchange-rate {
