@@ -14,19 +14,49 @@ code {
 
 .app {
   display: flex;
+  justify-content: center;
   align-items: center;
-
-}
-
-.exchange-rate {
-  background-color: rgb(0, 0, 0);
-  color: #fff;
+  height: 50vh;
 }
 
 .news-feed {
-  background-color: aqua;
+  background-color: rgb(149, 149, 245);
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  height: 100%;
+  max-width: 500px;
+}
+
+.newstext {
+  text-align: center;
+}
+
+a {
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #fff;
 }
 
 .currency-converter {
-  background-color: blueviolet;
+  background-color: rgb(230, 223, 211);
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  text-align: center;
+  height: 100%;
+  max-width: 500px;
+}
+
+.exchange-rate {
+  background-color: rgb(197, 194, 194);
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  color: #000000;
 }
